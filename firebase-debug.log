@@ -1,0 +1,31 @@
+[debug] [2026-02-15T10:19:54.946Z] ----------------------------------------------------------------------
+[debug] [2026-02-15T10:19:54.951Z] Command:       /usr/local/Cellar/node@22/22.19.0/bin/node /Users/salemkammoun/.nvm/versions/node/v22.20.0/bin/firebase deploy --only hosting
+[debug] [2026-02-15T10:19:54.951Z] CLI Version:   14.19.1
+[debug] [2026-02-15T10:19:54.952Z] Platform:      darwin
+[debug] [2026-02-15T10:19:54.952Z] Node Version:  v22.19.0
+[debug] [2026-02-15T10:19:54.952Z] Time:          Sun Feb 15 2026 11:19:54 GMT+0100 (Central European Standard Time)
+[debug] [2026-02-15T10:19:54.952Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-02-15T10:19:55.242Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-02-15T10:19:55.242Z] > authorizing via signed-in user (kammoun.salem@gmail.com)
+[debug] [2026-02-15T10:19:55.242Z] [iam] checking project zakattounsia for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2026-02-15T10:19:55.244Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:55.244Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:55.245Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/zakattounsia:testIamPermissions [none]
+[debug] [2026-02-15T10:19:55.245Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/zakattounsia:testIamPermissions x-goog-quota-user=projects/zakattounsia
+[debug] [2026-02-15T10:19:55.245Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zakattounsia:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-15T10:19:56.359Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/zakattounsia:testIamPermissions 200
+[debug] [2026-02-15T10:19:56.359Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/zakattounsia:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2026-02-15T10:19:56.360Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:56.360Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:56.360Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/zakattounsia [none]
+[debug] [2026-02-15T10:19:56.797Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/zakattounsia 200
+[debug] [2026-02-15T10:19:56.797Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/zakattounsia {"projectId":"zakattounsia","projectNumber":"332482607650","displayName":"zakatTounsia","name":"projects/zakattounsia","resources":{"hostingSite":"zakattounsia"},"state":"ACTIVE","etag":"1_3a22efd8-aced-42de-9a67-3eeba4c7e118"}
+[info] 
+[info] === Deploying to 'zakattounsia'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2026-02-15T10:19:56.804Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:56.804Z] Checked if tokens are valid: true, expires at: 1771154169744
+[debug] [2026-02-15T10:19:56.804Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zakattounsia/versions [none]
+[debug] [2026-02-15T10:19:56.804Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/zakattounsia/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}
