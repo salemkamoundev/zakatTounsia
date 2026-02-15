@@ -1,0 +1,51 @@
+{
+  "NAV": {
+    "TITLE": "Zakat Tounsia",
+    "ZAKAT": "Zakat",
+    "HERITAGE": "Héritage",
+    "ACCOUNT": "Compte",
+    "LOGIN": "Connexion",
+    "LOGOUT": "Déconnexion"
+  },
+  "HOME": {
+    "WELCOME": "Bienvenue",
+    "SUBTITLE": "Gérez vos obligations religieuses en toute sérénité",
+    "BTN_GOOGLE": "Continuer avec Google",
+    "BTN_GUEST": "Mode Invité",
+    "OR": "OU"
+  },
+  "ZAKAT": {
+    "TITLE": "Ma Zakat",
+    "SUBTITLE": "Calcul selon le taux du jour",
+    "NISSAB_LABEL": "Seuil (Nissab)",
+    "GOLD_PRICE": "Prix Or",
+    "INPUT_SAVINGS": "Épargne & Liquidités",
+    "INPUT_GOLD": "Or (Grammes)",
+    "INPUT_LOANS": "Argent prêté",
+    "INPUT_DEBTS": "Dettes à déduire",
+    "RESULT_ELIGIBLE": "Zakat Due",
+    "RESULT_NOT_ELIGIBLE": "Non Imposable",
+    "PAY_AMOUNT": "Montant à payer",
+    "SAVE_BTN": "Enregistrer le calcul"
+  },
+  "HERITAGE": {
+    "TITLE": "Répartition Héritage",
+    "SECTION_PARAMS": "Paramètres",
+    "SECTION_RESULTS": "Répartition Légale",
+    "NET_ESTATE": "Héritage Net",
+    "DECEASED": "Le Défunt est",
+    "MALE": "Homme",
+    "FEMALE": "Femme",
+    "HEIRS": "Ayants-droit",
+    "WIFE": "Épouse",
+    "HUSBAND": "Époux",
+    "FATHER": "Père",
+    "MOTHER": "Mère",
+    "SONS": "Fils",
+    "DAUGHTERS": "Filles",
+    "SIBLINGS": "Frères/Sœurs",
+    "TOTAL": "Total Distribué",
+    "NO_HEIRS": "Aucun héritier configuré",
+    "NOTE": "Note"
+  }
+}

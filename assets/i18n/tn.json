@@ -1,0 +1,51 @@
+{
+  "NAV": {
+    "TITLE": "زكاة تونسية",
+    "ZAKAT": "الزكاة",
+    "HERITAGE": "الورثة",
+    "ACCOUNT": "حسابي",
+    "LOGIN": "دخول",
+    "LOGOUT": "خروج"
+  },
+  "HOME": {
+    "WELCOME": "عسلامة",
+    "SUBTITLE": "أحسب زكاتك وقسمة الورثة بطريقة ساهلة وشرعية",
+    "BTN_GOOGLE": "كمل بـ Google",
+    "BTN_GUEST": "كمل بلاش (Invité)",
+    "OR": "وإلا"
+  },
+  "ZAKAT": {
+    "TITLE": "زكاة فلوسي",
+    "SUBTITLE": "حسب سوم الذهب متاع اليوم",
+    "NISSAB_LABEL": "النصاب اليوم",
+    "GOLD_PRICE": "سوم الذهب",
+    "INPUT_SAVINGS": "الفلوس المخبية (كاش ولا في البانكة)",
+    "INPUT_GOLD": "الذهب (بالغرام)",
+    "INPUT_LOANS": "فلوس تسالهم للعباد (وترجع)",
+    "INPUT_DEBTS": "الكريديات اللي عليك",
+    "RESULT_ELIGIBLE": "واجبة عليك الزكاة",
+    "RESULT_NOT_ELIGIBLE": "مازلت ما وصلتش للنصاب",
+    "PAY_AMOUNT": "لازمك تخرج",
+    "SAVE_BTN": "سجّل الحسبة"
+  },
+  "HERITAGE": {
+    "TITLE": "قسمة الورثة",
+    "SECTION_PARAMS": "المعلومات",
+    "SECTION_RESULTS": "القسمة الشرعية",
+    "NET_ESTATE": "التركة (فلوس وعقارات)",
+    "DECEASED": "المتوفي",
+    "MALE": "راجل",
+    "FEMALE": "مرا",
+    "HEIRS": "أصحاب الحق",
+    "WIFE": "الزوجة",
+    "HUSBAND": "الزوج",
+    "FATHER": "البو",
+    "MOTHER": "الأم",
+    "SONS": "الأولاد (ذكور)",
+    "DAUGHTERS": "البنات",
+    "SIBLINGS": "الخوات (خوه/أخته)",
+    "TOTAL": "المجموع",
+    "NO_HEIRS": "حط شكون مازال حي",
+    "NOTE": "ملاحظة"
+  }
+}

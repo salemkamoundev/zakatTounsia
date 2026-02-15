@@ -5,7 +5,7 @@
            style="width: 45px; height: 45px; background: #0F5132;">
         <i class="fas fa-moon"></i>
       </div>
-      <span class="fs-3" style="color: #0F5132;">Zakat<span style="color: #D4AF37;">Tounsia</span></span>
+      <span class="fs-3" style="color: #0F5132;">{{ 'NAV.TITLE' | translate }}</span>
     </a>
     
     <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navContent">
@@ -16,17 +16,32 @@
       <ul class="navbar-nav ms-auto gap-lg-4 mt-3 mt-lg-0 align-items-center">
         <li class="nav-item">
           <a class="nav-link fw-bold text-dark" routerLink="/zakat" routerLinkActive="text-success border-bottom border-warning border-2">
-            ZAKAT
+            {{ 'NAV.ZAKAT' | translate }}
           </a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold text-dark" routerLink="/heritage" routerLinkActive="text-success border-bottom border-warning border-2">
-            HÉRITAGE
+            {{ 'NAV.HERITAGE' | translate }}
           </a>
         </li>
+        
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle fw-bold" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="fas fa-globe me-1"></i> 
+            <span *ngIf="currentLang === 'tn'">🇹🇳 تونسية</span>
+            <span *ngIf="currentLang === 'ar'">🇸🇦 العربية</span>
+            <span *ngIf="currentLang === 'fr'">🇫🇷 Français</span>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end shadow border-0" style="border-radius: 12px;">
+            <li><button class="dropdown-item py-2 text-end" (click)="switchLanguage('tn')">🇹🇳 تونسية (Derja)</button></li>
+            <li><button class="dropdown-item py-2 text-end" (click)="switchLanguage('ar')">🇸🇦 العربية (Fos7a)</button></li>
+            <li><button class="dropdown-item py-2" (click)="switchLanguage('fr')">🇫🇷 Français</button></li>
+          </ul>
+        </li>
+
         <li class="nav-item ms-lg-2">
            <a routerLink="/login" class="btn btn-sm btn-gold-outline px-3">
-             <i class="fas fa-user me-2"></i>Compte
+             <i class="fas fa-user me-2"></i>{{ 'NAV.ACCOUNT' | translate }}
            </a>
         </li>
       </ul>
@@ -39,5 +54,5 @@
 </div>
 
 <footer class="text-center py-4 mt-auto border-top bg-white">
-  <p class="mb-0 text-muted small">© 2026 Zakat Tounsia • <i class="fas fa-heart text-danger"></i></p>
+  <p class="mb-0 text-muted small">© 2026 Zakat Tounsia</p>
 </footer>

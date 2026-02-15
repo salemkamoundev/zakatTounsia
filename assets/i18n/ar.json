@@ -1,0 +1,51 @@
+{
+  "NAV": {
+    "TITLE": "زكاة تونسية",
+    "ZAKAT": "الزكاة",
+    "HERITAGE": "المواريث",
+    "ACCOUNT": "حسابي",
+    "LOGIN": "دخول",
+    "LOGOUT": "خروج"
+  },
+  "HOME": {
+    "WELCOME": "مرحباً بكم",
+    "SUBTITLE": "حساب الزكاة والمواريث وفق الشريعة الإسلامية",
+    "BTN_GOOGLE": "متابعة عبر جوجل",
+    "BTN_GUEST": "دخول كضيف",
+    "OR": "أو"
+  },
+  "ZAKAT": {
+    "TITLE": "حاسبة الزكاة",
+    "SUBTITLE": "حسب سعر الذهب اليوم",
+    "NISSAB_LABEL": "النصاب اليوم",
+    "GOLD_PRICE": "سعر الذهب",
+    "INPUT_SAVINGS": "المدخرات والنقد",
+    "INPUT_GOLD": "الذهب (غرام)",
+    "INPUT_LOANS": "ديون لك (مرجوة السداد)",
+    "INPUT_DEBTS": "ديون عليك",
+    "RESULT_ELIGIBLE": "زكاة واجبة",
+    "RESULT_NOT_ELIGIBLE": "لم تبلغ النصاب بعد",
+    "PAY_AMOUNT": "المبلغ الواجب إخراجه",
+    "SAVE_BTN": "حفظ النتيجة"
+  },
+  "HERITAGE": {
+    "TITLE": "قسمة المواريث",
+    "SECTION_PARAMS": "البيانات",
+    "SECTION_RESULTS": "النتائج الشرعية",
+    "NET_ESTATE": "صافي التركة",
+    "DECEASED": "المتوفى",
+    "MALE": "رجل",
+    "FEMALE": "امرأة",
+    "HEIRS": "الورثة",
+    "WIFE": "الزوجة",
+    "HUSBAND": "الزوج",
+    "FATHER": "الأب",
+    "MOTHER": "الأم",
+    "SONS": "الأبناء (ذكور)",
+    "DAUGHTERS": "البنات",
+    "SIBLINGS": "الإخوة",
+    "TOTAL": "الإجمالي",
+    "NO_HEIRS": "أدخل بيانات الورثة",
+    "NOTE": "ملاحظة"
+  }
+}

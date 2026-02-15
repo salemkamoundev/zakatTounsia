@@ -33,8 +33,9 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "dist/zakattounsia/browser"
-              }
+                "input": "public"
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -91,8 +92,9 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "dist/zakattounsia/browser"
-              }
+                "input": "public"
+              },
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"

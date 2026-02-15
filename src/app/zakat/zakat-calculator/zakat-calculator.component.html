@@ -3,10 +3,12 @@
     <div class="card card-custom">
       <div class="card-header-custom d-flex justify-content-between align-items-center">
         <div>
-          <h2 class="h4 mb-0" style="color: #0F5132;"><i class="fas fa-hand-holding-heart me-2 text-warning"></i>Ma Zakat</h2>
+          <h2 class="h4 mb-0" style="color: #0F5132;">
+            <i class="fas fa-hand-holding-heart me-2 text-warning"></i>{{ 'ZAKAT.TITLE' | translate }}
+          </h2>
         </div>
         <div *ngIf="auth.user$ | async">
-          <button class="btn btn-sm btn-outline-danger rounded-circle" (click)="auth.logout()" title="Déconnexion">
+          <button class="btn btn-sm btn-outline-danger rounded-circle" (click)="auth.logout()">
             <i class="fas fa-power-off"></i>
           </button>
         </div>
@@ -14,29 +16,24 @@
 
       <div class="card-body p-4 p-lg-5">
         
-        <div *ngIf="isLoading" class="text-center py-5 text-muted">
-          <div class="spinner-border text-success mb-3" role="status"></div>
-          <div>Chargement des taux...</div>
-        </div>
-
         <div *ngIf="!isLoading">
           <div class="d-flex align-items-center justify-content-between p-4 mb-5 rounded-4 text-white" 
                style="background: linear-gradient(135deg, #0F5132 0%, #0b3d26 100%); position: relative; overflow: hidden;">
             <i class="fas fa-kaaba position-absolute text-white opacity-25" style="font-size: 10rem; right: -20px; top: -20px;"></i>
             
             <div class="position-relative z-1">
-              <span class="text-warning text-uppercase small fw-bold ls-1">Seuil du Nissab (Aujourd'hui)</span>
+              <span class="text-warning text-uppercase small fw-bold ls-1">{{ 'ZAKAT.NISSAB_LABEL' | translate }}</span>
               <div class="display-5 fw-bold font-monospace">{{ dailyValues?.nissabZakat | number:'1.0-0' }} <span class="fs-4">DT</span></div>
             </div>
             <div class="text-end position-relative z-1 d-none d-sm-block">
-              <div class="badge bg-warning text-dark mb-1">Or 24k</div>
+              <div class="badge bg-warning text-dark mb-1">{{ 'ZAKAT.GOLD_PRICE' | translate }}</div>
               <div class="fw-bold">{{ dailyValues?.goldPrice }} DT/g</div>
             </div>
           </div>
 
           <form [formGroup]="zakatForm" class="row g-4">
             <div class="col-md-6">
-              <label class="form-label text-muted small fw-bold text-uppercase">Épargne & Cash</label>
+              <label class="form-label text-muted small fw-bold text-uppercase">{{ 'ZAKAT.INPUT_SAVINGS' | translate }}</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-wallet"></i></span>
                 <input type="number" formControlName="epargne" class="form-control" placeholder="0">
@@ -44,7 +41,7 @@
             </div>
 
             <div class="col-md-6">
-              <label class="form-label text-muted small fw-bold text-uppercase">Or (Grammes)</label>
+              <label class="form-label text-muted small fw-bold text-uppercase">{{ 'ZAKAT.INPUT_GOLD' | translate }}</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-ring"></i></span>
                 <input type="number" formControlName="or_grammes" class="form-control" placeholder="0">
@@ -52,7 +49,7 @@
             </div>
 
             <div class="col-md-6">
-              <label class="form-label text-muted small fw-bold text-uppercase">Argent Prêté</label>
+              <label class="form-label text-muted small fw-bold text-uppercase">{{ 'ZAKAT.INPUT_LOANS' | translate }}</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="fas fa-hand-holding-usd"></i></span>
                 <input type="number" formControlName="argent_prete" class="form-control" placeholder="0">
@@ -60,7 +57,7 @@
             </div>
 
             <div class="col-md-6">
-              <label class="form-label text-danger small fw-bold text-uppercase">Dettes à déduire</label>
+              <label class="form-label text-danger small fw-bold text-uppercase">{{ 'ZAKAT.INPUT_DEBTS' | translate }}</label>
               <div class="input-group">
                 <span class="input-group-text text-danger border-danger"><i class="fas fa-file-invoice-dollar"></i></span>
                 <input type="number" formControlName="dettes" class="form-control border-danger text-danger" placeholder="0">
@@ -75,27 +72,23 @@
               <div class="d-inline-block p-4 rounded-circle bg-success text-white shadow mb-3" style="width: 80px; height: 80px; display: grid; place-items: center;">
                 <i class="fas fa-check fa-2x"></i>
               </div>
-              <h3 class="text-success mb-0">Zakat Due</h3>
+              <h3 class="text-success mb-0">{{ 'ZAKAT.RESULT_ELIGIBLE' | translate }}</h3>
+              <p class="text-muted">{{ 'ZAKAT.PAY_AMOUNT' | translate }}</p>
               <h1 class="display-3 fw-bold text-dark mb-2">{{ zakatAmount | number:'1.3-3' }} <span class="fs-4 text-muted">DT</span></h1>
-              <p class="text-muted">Macha Allah, purifiez vos biens.</p>
             </div>
 
             <div *ngIf="!isEligible" class="opacity-75">
-              <div class="d-inline-block p-3 rounded-circle bg-light text-muted mb-3">
-                <i class="fas fa-minus fa-2x"></i>
-              </div>
-              <h4 class="text-muted">Non Imposable</h4>
-              <p class="small text-muted">Votre net est inférieur au Nissab.</p>
+              <h4 class="text-muted">{{ 'ZAKAT.RESULT_NOT_ELIGIBLE' | translate }}</h4>
             </div>
 
             <div class="mt-4 pt-3 border-top" *ngIf="isEligible">
                <ng-container *ngIf="auth.user$ | async as user; else loginBtn">
                   <button class="btn btn-emerald w-100 py-3" (click)="sauvegarderResultat(user)">
-                    <i class="fas fa-save me-2"></i> Enregistrer le calcul
+                    <i class="fas fa-save me-2"></i> {{ 'ZAKAT.SAVE_BTN' | translate }}
                   </button>
                </ng-container>
                <ng-template #loginBtn>
-                  <a routerLink="/login" class="btn btn-gold-outline w-100">Se connecter pour sauvegarder</a>
+                  <a routerLink="/login" class="btn btn-gold-outline w-100">{{ 'NAV.LOGIN' | translate }}</a>
                </ng-template>
             </div>
           </div>
