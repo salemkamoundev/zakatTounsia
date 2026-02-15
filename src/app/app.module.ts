@@ -7,9 +7,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// Utilisation des versions COMPAT (plus stables pour les projets à base de modules)
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+// NOUVEAUX IMPORTS (API Modulaire)
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 
 @NgModule({
@@ -21,12 +21,13 @@ import { environment } from '../environments/environment';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ReactiveFormsModule,
-    // Initialisation Standard
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    // Configuration Modulaire (remplace AngularFireModule.initializeApp)
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore())
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
