@@ -1,1 +1,109 @@
-<div class="container mt-4"><h3>Calculateur Héritage (En construction)</h3></div>
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card card-custom h-100 bg-white">
+      <div class="card-header-custom">
+        <h5 class="mb-0"><i class="fas fa-sliders-h me-2 text-success"></i>Données</h5>
+      </div>
+      <div class="card-body">
+        <form [formGroup]="heritageForm">
+          <div class="mb-3">
+            <label class="form-label small fw-bold text-muted">Montant (DT)</label>
+            <input type="number" class="form-control form-control-lg fw-bold text-success" formControlName="netEstate">
+          </div>
+
+          <div class="mb-3 p-3 bg-light rounded-3">
+            <label class="d-block small fw-bold text-muted mb-2">Le Défunt</label>
+            <div class="btn-group w-100" role="group">
+              <input type="radio" class="btn-check" formControlName="gender" value="male" id="gM">
+              <label class="btn btn-outline-success" for="gM">Homme</label>
+              <input type="radio" class="btn-check" formControlName="gender" value="female" id="gF">
+              <label class="btn btn-outline-success" for="gF">Femme</label>
+            </div>
+          </div>
+
+          <div class="mb-3">
+             <label class="small fw-bold text-muted">Parents</label>
+             <div class="d-flex gap-2">
+               <div class="form-check form-switch bg-light p-2 rounded flex-fill">
+                 <input class="form-check-input ms-0 me-2" type="checkbox" formControlName="father"> Père
+               </div>
+               <div class="form-check form-switch bg-light p-2 rounded flex-fill">
+                 <input class="form-check-input ms-0 me-2" type="checkbox" formControlName="mother"> Mère
+               </div>
+             </div>
+          </div>
+
+          <div class="mb-3">
+             <label class="small fw-bold text-muted">Conjoint</label>
+             <div class="form-check form-switch bg-light p-2 rounded" *ngIf="isDeceasedMale">
+                 <input class="form-check-input ms-0 me-2" type="checkbox" formControlName="wife"> Épouse Vivante
+             </div>
+             <div class="form-check form-switch bg-light p-2 rounded" *ngIf="!isDeceasedMale">
+                 <input class="form-check-input ms-0 me-2" type="checkbox" formControlName="husband"> Époux Vivant
+             </div>
+          </div>
+
+          <div class="row g-2">
+            <div class="col-6">
+              <label class="small fw-bold text-muted">Fils</label>
+              <input type="number" class="form-control" formControlName="sons">
+            </div>
+            <div class="col-6">
+              <label class="small fw-bold text-muted">Filles</label>
+              <input type="number" class="form-control" formControlName="daughters">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-lg-8">
+    <div class="card card-custom h-100">
+      <div class="card-header-custom bg-success text-white d-flex align-items-center" style="background: #0F5132 !important; color: white !important;">
+        <h5 class="mb-0 text-white"><i class="fas fa-chart-pie me-2"></i>Répartition Légale</h5>
+      </div>
+      
+      <div class="card-body p-0">
+        <div *ngIf="results.length === 0" class="text-center py-5 text-muted">
+           <i class="fas fa-users-slash fa-3x mb-3 opacity-25"></i>
+           <p>Configurez la famille pour voir le calcul.</p>
+        </div>
+
+        <div class="table-responsive" *ngIf="results.length > 0">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="bg-light">
+              <tr>
+                <th class="ps-4 py-3">Héritier</th>
+                <th class="text-center">Part</th>
+                <th class="text-end pe-4">Valeur</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let r of results">
+                <td class="ps-4 py-3">
+                  <div class="fw-bold text-dark">{{ r.name }}</div>
+                  <div class="small text-muted">{{ r.note }}</div>
+                </td>
+                <td class="text-center" style="min-width: 150px;">
+                  <span class="badge bg-warning text-dark mb-1">{{ r.shareFraction }}</span>
+                  <div class="progress" style="height: 4px;">
+                    <div class="progress-bar bg-success" [style.width.%]="r.sharePercent"></div>
+                  </div>
+                </td>
+                <td class="text-end pe-4">
+                  <div class="fw-bold fs-5 text-success">{{ r.amount | number:'1.0-2' }} <small class="fs-6 text-muted">DT</small></div>
+                </td>
+              </tr>
+              <tr class="bg-light fw-bold border-top">
+                <td class="ps-4 py-3">TOTAL</td>
+                <td></td>
+                <td class="text-end pe-4">{{ heritageForm.get('netEstate')?.value | number:'1.0-2' }} DT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

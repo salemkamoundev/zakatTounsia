@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+/* FORCE OVERRIDE */
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --primary-color: #0F5132;   /* Vert Émeraude */
+  --secondary-color: #D4AF37; /* Or */
+  --light-bg: #F3F4F6;
+}
+
+body {
+  font-family: 'Poppins', sans-serif !important;
+  background-color: var(--light-bg) !important;
+  background-image: radial-gradient(circle at 5% 10%, rgba(15, 81, 50, 0.05) 0%, transparent 20%),
+                    radial-gradient(circle at 95% 90%, rgba(212, 175, 55, 0.1) 0%, transparent 20%) !important;
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, .navbar-brand {
+  font-family: 'Amiri', serif !important;
+}
+
+/* CARTES PREMIUM */
+.card-custom {
+  border: none !important;
+  border-radius: 20px !important;
+  background: #fff !important;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.card-custom:hover {
+  transform: translateY(-5px);
+}
+
+.card-header-custom {
+  background: white !important;
+  border-bottom: 1px solid rgba(0,0,0,0.05) !important;
+  padding: 1.5rem !important;
+}
+
+/* BOUTONS */
+.btn-emerald {
+  background: linear-gradient(135deg, #0F5132 0%, #198754 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px !important;
+  padding: 12px 30px !important;
+  font-weight: 500 !important;
+  box-shadow: 0 4px 15px rgba(15, 81, 50, 0.3) !important;
+}
+.btn-emerald:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(15, 81, 50, 0.4) !important;
+}
+
+.btn-gold-outline {
+  border: 2px solid var(--secondary-color) !important;
+  color: #b08d26 !important;
+  border-radius: 50px !important;
+  background: transparent !important;
+  font-weight: 600 !important;
+}
+.btn-gold-outline:hover {
+  background: var(--secondary-color) !important;
+  color: white !important;
+}
+
+/* INPUTS */
+.form-control, .form-select {
+  border-radius: 12px !important;
+  padding: 12px !important;
+  border: 1px solid #eee !important;
+  background-color: #fcfcfc !important;
+}
+.form-control:focus {
+  border-color: var(--secondary-color) !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1) !important;
+}
+.input-group-text {
+  border-radius: 12px !important;
+  background: #fff !important;
+  border: 1px solid #eee !important;
+  color: var(--secondary-color) !important;
+}
