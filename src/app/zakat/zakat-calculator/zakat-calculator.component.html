@@ -1,0 +1,15 @@
+<div class="container mt-4">
+  <div class="card shadow-sm">
+    <div class="card-header bg-success text-white">Calculateur Zakat</div>
+    <div class="card-body">
+      <form [formGroup]="zakatForm">
+        <div class="mb-3"><label>Épargne</label><input type="number" formControlName="epargne" class="form-control"></div>
+        <div class="mb-3"><label>Or (g)</label><input type="number" formControlName="or_grammes" class="form-control"></div>
+        <div class="mb-3"><label>Argent prêté</label><input type="number" formControlName="argent_prete" class="form-control"></div>
+        <div class="mb-3"><label>Dettes</label><input type="number" formControlName="dettes" class="form-control"></div>
+      </form>
+      <hr>
+      <h3>À payer : {{ zakatAmount | number:'1.3-3' }} TND</h3>
+    </div>
+  </div>
+</div>
