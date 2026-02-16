@@ -1,19 +1,23 @@
 rules_version = '2';
-
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // This rule allows anyone with your Firestore database reference to view, edit,
-    // and delete all data in your Firestore database. It is useful for getting
-    // started, but it is configured to expire after 30 days because it
-    // leaves your app open to attackers. At that time, all client
-    // requests to your Firestore database will be denied.
-    //
-    // Make sure to write security rules for your app before that time, or else
-    // all client requests to your Firestore database will be denied until you Update
-    // your rules
-    match /{document=**} {
-      allow read, write: if true;
+    // --- 1. CONFIGURATIONS GLOBALES (Nissab, Prix de l'or) ---
+    // Collection: configurations/daily_values
+    match /configurations/{document} {
+      // Tout le monde peut lire pour voir le Nissab (même sans compte)
+      allow read: if true;
+      // Personne ne peut modifier depuis l'application (sécurité)
+      allow write: if false;
     }
+
+    // --- 2. DONNÉES UTILISATEURS (Historique des calculs) ---
+    // Collection: users/{userId}/zakat_calculations/...
+    // Le {document=**} signifie "ce document et toutes ses sous-collections"
+    match /users/{userId}/{document=**} {
+      // L'utilisateur doit être connecté ET son ID doit correspondre à l'ID du document
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    
   }
 }
